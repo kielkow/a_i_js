@@ -22,8 +22,57 @@ let alturaQ = document.querySelector('#quinto-paciente .info-altura').textConten
 let pesoQ = document.querySelector('#quinto-paciente .info-peso').textContent
 let imcQ = pesoQ / (Math.pow(alturaQ, 2))
 
-document.querySelector('#primeiro-paciente .info-imc').textContent = imcP.toFixed(2)
-document.querySelector('#segundo-paciente .info-imc').textContent = imcS.toFixed(2)
-document.querySelector('#terceiro-paciente .info-imc').textContent = imcT.toFixed(2)
-document.querySelector('#quarto-paciente .info-imc').textContent = imcQr.toFixed(2)
-document.querySelector('#quinto-paciente .info-imc').textContent = imcQ.toFixed(2)
+
+
+
+
+if ((alturaP >= 3 || pesoP <= 0) || (alturaP <= 0 || pesoP >= 1000)) {
+    document.querySelector('#primeiro-paciente .info-imc').textContent = 'Peso ou altura inválido'
+}
+else {
+    document.querySelector('#primeiro-paciente .info-imc').textContent = imcP.toFixed(2)
+}
+
+
+
+
+
+if ((alturaS >= 3 || pesoS <= 0) || (alturaS <= 0 || pesoS >= 1000)) {
+    document.querySelector('#segundo-paciente .info-imc').textContent = 'Peso ou altura inválido'
+}
+else {
+    document.querySelector('#segundo-paciente .info-imc').textContent = imcS.toFixed(2)
+}
+
+
+
+
+if ((alturaT >= 3 || pesoT <= 0) || (alturaT <= 0 || pesoT >= 1000)) {
+    document.querySelector('#terceiro-paciente .info-imc').textContent = 'Peso ou altura inválido'
+}
+else {
+    document.querySelector('#terceiro-paciente .info-imc').textContent = imcT.toFixed(2)
+}
+
+
+
+
+
+if ((alturaQr >= 3 || pesoQr <= 0) || (alturaQr <= 0 || pesoQr >= 1000)) {
+    document.querySelector('#quarto-paciente .info-imc').textContent = 'Peso ou altura inválido'
+}
+else {
+    document.querySelector('#quarto-paciente .info-imc').textContent = imcQr.toFixed(2)
+}
+
+
+
+
+
+
+if ((alturaQ >= 3 || pesoQ <= 0) || (alturaQ <= 0 || pesoQ >= 1000)) {
+    document.querySelector('#quinto-paciente .info-imc').textContent = 'Peso ou altura inválido'
+}
+else {
+    document.querySelector('#quinto-paciente .info-imc').textContent = imcQ.toFixed(2)
+}
