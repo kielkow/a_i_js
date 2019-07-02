@@ -4,7 +4,6 @@ let altura, peso, imc
 
 document.querySelector('.titulo').textContent = 'Aparecida Nutricionista:'
 
-
 let pacientes = document.querySelectorAll('.paciente')
 console.log(pacientes)
 
@@ -21,3 +20,14 @@ pacientes.forEach(element => {
         element.querySelector('.info-imc').textContent = imc.toFixed(2)
     }
 });
+
+let btnAdd = document.querySelector('#adicionar-paciente')
+btnAdd.addEventListener('click', function (event){
+    event.preventDefault()
+    document.getElementById('peso').value = ''
+    document.getElementById('altura').value = ''
+    document.getElementById('gordura').value = ''
+    document.getElementById('nome').value = ''
+})
+
+
