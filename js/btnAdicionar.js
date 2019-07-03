@@ -1,32 +1,3 @@
-function validacaoImc(altura, peso){
-    if ((altura >= 3 || peso <= 0) || (altura <= 0 || peso >= 1000)) {
-        return 'Peso ou altura inválido'
-    }
-    else {
-        let imc = (peso / (Math.pow(altura, 2)))
-        return imc.toFixed(2)
-    }
-}
-
-
-
-
-function imcInvalido(imc){
-    if(imc === 'Peso ou altura inválido'){
-        imc = document.createElement('tr')
-        imc.classList.add('paciente-invalido')
-        return imc
-    }
-    else{
-        imc = document.createElement('tr')
-        return imc
-    }
-}
-
-
-
-
-
 let btnAdd = document.querySelector('#adicionar-paciente')
 btnAdd.addEventListener('click', function (event){
     event.preventDefault()
