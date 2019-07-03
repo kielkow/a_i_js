@@ -1,27 +1,30 @@
-/*
-alert('Site carregado!')
-
-let altura, peso, imc
-
-document.querySelector('.titulo').textContent = 'Aparecida Nutricionista:'
-
-let pacientes = document.querySelectorAll('.paciente')
-console.log(pacientes)
-
-pacientes.forEach(element => {
-    altura = element.querySelector('.info-altura').textContent
-    peso = element.querySelector('.info-peso').textContent
-    imc = peso / (Math.pow(altura, 2))
-
+function validacaoImc(altura, peso){
     if ((altura >= 3 || peso <= 0) || (altura <= 0 || peso >= 1000)) {
-        element.querySelector('.info-imc').textContent = 'Peso ou altura inválido'
-        element.classList.add('paciente-invalido')
+        return 'Peso ou altura inválido'
     }
     else {
-        element.querySelector('.info-imc').textContent = imc.toFixed(2)
+        let imc = (peso / (Math.pow(altura, 2)))
+        return imc.toFixed(2)
     }
-});
-*/
+}
+
+
+
+
+function imcInvalido(imc){
+    if(imc === 'Peso ou altura inválido'){
+        imc = document.createElement('tr')
+        imc.classList.add('paciente-invalido')
+        return imc
+    }
+    else{
+        imc = document.createElement('tr')
+        return imc
+    }
+}
+
+
+
 
 
 let btnAdd = document.querySelector('#adicionar-paciente')
@@ -32,9 +35,9 @@ btnAdd.addEventListener('click', function (event){
     let peso = document.querySelector('#peso').value
     let altura = document.querySelector('#altura').value
     let gordura = document.querySelector('#gordura').value
-    let imc = (peso / (Math.pow(altura, 2)))
+    let imc = validacaoImc(altura, peso)
 
-    let pacienteTr = document.createElement('tr')
+    let pacienteTr = imcInvalido(imc)
     let nomeTd = document.createElement('td')
     let pesoTd = document.createElement('td')
     let alturaTd = document.createElement('td')
@@ -45,7 +48,7 @@ btnAdd.addEventListener('click', function (event){
     pesoTd.textContent = peso
     alturaTd.textContent = altura
     gorduraTd.textContent = gordura
-    imcTd.textContent = imc.toFixed(2)
+    imcTd.textContent = imc
 
     pacienteTr.appendChild(nomeTd)
     pacienteTr.appendChild(pesoTd)
@@ -61,5 +64,4 @@ btnAdd.addEventListener('click', function (event){
     document.getElementById('gordura').value = ''
     document.getElementById('nome').value = ''
 })
-
 
