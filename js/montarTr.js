@@ -1,14 +1,16 @@
-function montarTr(paciente){
+function montarTr(paciente) {
     let pacienteTr = imcInvalido(paciente.imc)
+    if (pacienteTr != null) {
 
-    pacienteTr.appendChild(montarTd(paciente.nome, 'info-nome'))
-    pacienteTr.appendChild(montarTd(paciente.peso, 'info-peso'))
-    pacienteTr.appendChild(montarTd(paciente.altura, 'info-altura'))
-    pacienteTr.appendChild(montarTd(paciente.gordura, 'info-gordura'))
-    pacienteTr.appendChild(montarTd(paciente.imc, 'info-imc'))
+        pacienteTr.appendChild(montarTd(paciente.nome, 'info-nome'))
+        pacienteTr.appendChild(montarTd(paciente.peso, 'info-peso'))
+        pacienteTr.appendChild(montarTd(paciente.altura, 'info-altura'))
+        pacienteTr.appendChild(montarTd(paciente.gordura, 'info-gordura'))
+        pacienteTr.appendChild(montarTd(paciente.imc, 'info-imc'))
 
-    let tabela = document.querySelector('#tabela-pacientes')
-    tabela.appendChild(pacienteTr)
+        let tabela = document.querySelector('#tabela-pacientes')
+        tabela.appendChild(pacienteTr)
 
-    return tabela
+        return tabela
+    }
 }
