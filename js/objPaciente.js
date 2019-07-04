@@ -3,9 +3,9 @@ function objPaciente(){
     let paciente = {
         nome: form.nome.value,
         peso: form.peso.value,
-        altura: form.peso.value,
+        altura: form.altura.value,
         gordura: form.gordura.value,
-        imc: validacaoImc()
+        imc: validacaoImc(form.altura.value, form.peso.value)
     }
     return paciente
 }

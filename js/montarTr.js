@@ -1,7 +1,7 @@
 function montarTr(paciente){
-    let pacienteTr = imcInvalido(imc)
+    let pacienteTr = imcInvalido(paciente.imc)
 
-    pacienteTr.appendChild(ontarTd(paciente.nome, 'info-nome'))
+    pacienteTr.appendChild(montarTd(paciente.nome, 'info-nome'))
     pacienteTr.appendChild(montarTd(paciente.peso, 'info-peso'))
     pacienteTr.appendChild(montarTd(paciente.altura, 'info-altura'))
     pacienteTr.appendChild(montarTd(paciente.gordura, 'info-gordura'))
