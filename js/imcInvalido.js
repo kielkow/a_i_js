@@ -6,6 +6,7 @@ function imcInvalido(imc){
     }
     else{
         imc = document.createElement('tr')
+        imc.classList.add('paciente-valido')
         return imc
     }
 }
