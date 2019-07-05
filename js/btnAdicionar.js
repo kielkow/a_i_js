@@ -3,5 +3,8 @@ btnAdd.addEventListener('click', function (event){
     event.preventDefault()
     let paciente = objPaciente()
     montarTr(paciente)
-    limpar()
+    let erro = document.querySelector('.alert').textContent
+    if(erro === ''){
+        limpar() 
+    }
 })
