@@ -5,7 +5,7 @@ function objPaciente(){
         peso: form.peso.value,
         altura: form.altura.value,
         gordura: form.gordura.value,
-        imc: validacaoImc(form.altura.value, form.peso.value)
+        imc: validacaoImc(form.nome.value, form.altura.value, form.peso.value, form.gordura.value)
     }
     return paciente
 }

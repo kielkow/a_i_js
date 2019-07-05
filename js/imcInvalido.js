@@ -1,8 +1,9 @@
 function imcInvalido(imc){
-    if(imc === 'Peso ou altura inválido'){
+    if(imc === 'Valor preenchido inválido'){
         let erro = document.querySelector('.alert')
         erro.classList.add('erro')
         erro.textContent = imc
+        return null
     }
     else{
         let erro = document.querySelector('.alert')
