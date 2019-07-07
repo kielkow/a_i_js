@@ -1,8 +1,9 @@
-let remove = document.querySelectorAll('#tabela-pacientes')
+let remove = document.querySelector('#tabela-pacientes')
+remove.addEventListener('dblclick', function(event){
+    event.target.parentNode.classList.add('fadeout')
 
-remove.forEach(element => {
-    element.addEventListener('dblclick', function(){
-        console.log(this)
-        this.remove()
-    })
-});
+    setTimeout(function(){
+        event.target.parentNode.remove()
+    }, 500)
+
+})
